@@ -26,8 +26,8 @@ router.delete("/delete-query/:id", deleteQuery);
 router.put("/reply-query/:id", replyQuery);
 
 // USER ROUTES
-router.post("/user", registerUser)
-router.post('/user/login', loginUser)
+router.post("/register", registerUser)
+router.post('/login', loginUser)
 
 module.exports = router;
 
