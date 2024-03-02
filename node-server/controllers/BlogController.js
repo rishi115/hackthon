@@ -1,7 +1,7 @@
 const Blog = require("../models/Blog");
 
 module.exports.addBlog = async (req, res) => {
-  const { title, content, author } = req.body;
+  const { title, content, author,thumbnail } = req.body;
   try {
     const blog = await Blog.create({ title, content, author, thumbnail });
     await blog.save();
