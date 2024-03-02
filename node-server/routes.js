@@ -1,4 +1,5 @@
-const { addBlog, getBlogs } = require("./controllers/BlogController");
+const { addBlog, getBlogs, deleteBlog } = require("./controllers/BlogController");
+const userModel = require("./models/User")
 const { chat } = require("./controllers/OpenaiController");
 const {
   addQuery,
@@ -6,6 +7,8 @@ const {
   deleteQuery,
   replyQuery,
 } = require("./controllers/QueryController");
+
+const {registerUser, loginUser} = require("./controllers/UserController")
 
 const router = require("express").Router();
 
@@ -21,6 +24,10 @@ router.post("/add-query", addQuery);
 router.get("/get-queries", getQueries);
 router.delete("/delete-query/:id", deleteQuery);
 router.put("/reply-query/:id", replyQuery);
+
+// USER ROUTES
+router.post("/user", registerUser)
+router.post('/user/login', loginUser)
 
 module.exports = router;
 
