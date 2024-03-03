@@ -358,7 +358,7 @@ class _SignInState extends State<SignIn> {
                 children: [
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage(User: "Consellor")),);
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage(User: "Counsellor")),);
                     },
                     child: Container(
 

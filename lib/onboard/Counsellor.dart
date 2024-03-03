@@ -6,6 +6,8 @@ import 'package:hackthon/Cognative/AdhdStudent.dart';
 import '../../Button.dart';
 import '../../Cognative/Teacher.dart';
 import '../../Counsellor/Counsellor.dart';
+import '../Cognative/Report.dart';
+import '../Profile.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -39,10 +41,11 @@ class _HomePageState extends State<HomePage> {
         if(widget.User == "Counsellor")
             Counsellor(),
         if(widget.User == "Counsellor" || widget.User == "Teacher")
-            Counsellor(),
+          Teacher(),
+
 
         AdhdStudent(),
-        Teacher(),
+        ProfilePage(),
         ButtonWidget(),
 
 
@@ -50,14 +53,27 @@ class _HomePageState extends State<HomePage> {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text("Counsellor"),
+        title: Text(widget.User == "Counsellor" ? "Counsellor" : (widget.User == "Teacher" ? "Teacher" : "Student")),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
           icon: Image.asset('assets/icons8-student-48.png'),
           tooltip: 'Back to Home Page',
-        ),
+        ),actions: [
+          IconButton(
+            onPressed: () {
+Navigator.push(context, MaterialPageRoute(builder: (context) => Report()));
+            },
+            icon: Icon(
+              Icons.report_gmailerrorred,
+              color: Colors.orange.withOpacity(0.9),
+size: 40,
+            ),
+            tooltip: 'Back to Home Page',
+          ),
+        SizedBox(width: 20,)
+      ],
       ),
       body: PageView(
         controller: _pageController,
