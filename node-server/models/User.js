@@ -8,16 +8,17 @@ const userAnalitycs = mongoose.Schema({
     behaviour : {
         type : String,
     },
-    wrongSolvedQuestions : [{
+    wrongSolvedQuestions : {
         id : {
-            type : Number,
+
+            type : Array,
         }
-    }],
-    correctSolvedQuestions : [{
+    },
+    correctSolvedQuestions : {
         id : {
-            type : Number,
+            type : Array,
         }
-    }]
+    }
 
 })
 

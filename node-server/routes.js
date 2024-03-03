@@ -8,7 +8,7 @@ const {
   replyQuery,
 } = require("./controllers/QueryController");
 
-const {registerUser, loginUser} = require("./controllers/UserController")
+const {registerUser, loginUser, uploadAnalityc} = require("./controllers/UserController")
 
 const router = require("express").Router();
 
@@ -28,6 +28,7 @@ router.put("/reply-query/:id", replyQuery);
 // USER ROUTES
 router.post("/user", registerUser)
 router.post('/user/login', loginUser)
+router.post('/user/analityc', uploadAnalityc)
 
 module.exports = router;
 
