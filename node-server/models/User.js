@@ -2,22 +2,20 @@ const mongoose = require("mongoose");
 
 
 const userAnalitycs = mongoose.Schema({
-    _id : {
-        type : String,
+    id : {
+        type : Number,
     },
     behaviour : {
         type : String,
     },
     wrongSolvedQuestions : {
-        id : {
 
             type : Array,
-        }
+            default : []
     },
     correctSolvedQuestions : {
-        id : {
             type : Array,
-        }
+            default : []
     }
 
 })
